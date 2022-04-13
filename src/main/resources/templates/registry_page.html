@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>七湘银行 - 开户</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include All CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/payloan-icon.css"/>
+    <link rel="stylesheet" type="text/css" href="css/icofont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/settings.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.css"/>
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="css/preset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/theme.css"/>
+    <link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" href="layui\css\layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css"
+          media="all">
+</head>
+
+<body class="bg_right">
+<!-- Header section -->
+<header class="header_1" id="header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-3">
+                <div class="logo">
+                    <a href="/index"><img src="images/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7">
+                <nav class="mainmenu MenuInRight text-right">
+                    <a href="javascript:void(0);" class="mobilemenu d-md-none d-lg-none d-xl-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <ul>
+                        <li class="menu-item-has-children">
+                            <a href="/index">主页</a>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">服务</a>
+                            <ul class="sub-menu">
+                                <li><a href="/deposit">存款活动</a></li>
+                                <li><a href="/loan">贷款服务</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact_page.html">联系我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-2 col-md-2 hidden-xs">
+                <div class="navigator_btn btn_bg text-right">
+                    <a id="login_stauts" class="common_btn" href="#" test-active="test-form">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header section -->
+
+<!-- Page Banner -->
+<section class="pagebanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bannerTitle text-left">
+                    <h2>开户</h2>
+                    <p>在您最需要的时候祝您一臂之力</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Banner -->
+
+<!-- Common Section -->
+<section class="commonSection applicationPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <div class="formArea appareaBG">
+                    <form class="layui-form"><!--action=""-->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="name" lay-verify="name" autocomplete="off"
+                                       placeholder="请输入姓名" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机</label>
+                            <div class="layui-input-block">
+                                <input type="tel" name="tel" lay-verify="tel" autocomplete="off"
+                                       placeholder="请输入手机号" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">身份证</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="IDCardNum" lay-verify="identity" placeholder="请输入身份证"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">密码</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="password" lay-verify="pass" placeholder="请输入密码"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">工作</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="profession" value="在职" title="在职" checked="">
+                                <input type="radio" name="profession" value="无业" title="失业">
+                            </div>
+                        </div>
+                        <div class="layui-form-item text-center" style="margin-top: 10%;">
+                            <div class="layui-input-block">
+                                <button type="submit" style="background:#8180e0; width: 15%;height: 5%;"
+                                        class="layui-btn" lay-submit=""
+                                        lay-filter="demo1">提交
+                                </button>
+                                <button type="reset" style="background:#8180e0; width: 15%;height: 5%;color: white;"
+                                        class="layui-btn layui-btn-primary">
+                                    重置
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Common Section -->
+
+<!-- Include All JS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.themepunch.revolution.min.js"></script>
+<script src="js/jquery.themepunch.tools.min.js"></script>
+<!-- Rev slider Add on Start -->
+<!-- Rev slider Add on End -->
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/shuffle.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/theme.js"></script>
+<script src="layui\layui.js" charset="utf-8"></script>
+<script src="js/cookie.umd.min.js"></script>
+<script src="js/common.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述 JS 路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+        //自定义验证规则
+        form.verify({
+            name: function (value) {
+                if (value.length < 2) {
+                    return '姓名至少两个字哦';
+                }
+            }
+            , tel: function (value) {
+                if (value.length != 11) {
+                    return '请输入正确的手机号';
+                }
+            }
+            , pass: [
+                /^[\S]{6,12}$/
+                , '密码必须6到12位，且不能出现空格'
+            ]
+            , identity: function (value) {
+                if (value.length != 18) {
+                    return '请输入正确身份证';
+                }
+            }
+        });
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            console.log(data.field);
+            console.log(data.field.IDCardNum);
+            idcard = data.field.IDCardNum;
+            data.field.age = 2022 - parseInt(idcard.substring(6, 10));
+            data.field.gender = idcard / 10 % 2;
+            $.ajax({
+                type: "POST",
+                url: "/user/signup",
+                data: data.field,
+                dataType: 'JSON',
+                success: function (rdata) {
+                    layer.alert(JSON.stringify(rdata), {
+                        title: '返回结果'
+                    })
+                },
+                error: function (rdata) {
+                    layer.alert(JSON.stringify(rdata), {
+                        title: '返回结果'
+                    })
+                },
+            });
+
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+
+</html>

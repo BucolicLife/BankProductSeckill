@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sanxiangbank.seckill.dao.DefaultRecordMapper">
+    <insert id="insert">
+        insert into defaultRecord
+        VALUES (#{id}, CURRENT_TIMESTAMP);
+    </insert>
+    <select id="selectTotal" resultType="com.sanxiangbank.seckill.entity.DefaultRecord">
+        select *
+        from defaultRecord;
+    </select>
+    <select id="selectByIDCardNum" resultType="com.sanxiangbank.seckill.entity.DefaultRecord">
+        select *
+        from defaultRecord
+        where IDCardNum = #{id};
+    </select>
+    <select id="queryDefaultTimes" resultType="java.lang.Integer">
+        select count(*)
+        from defaultRecord
+        where IDCardNum = #{id};
+    </select>
+</mapper>

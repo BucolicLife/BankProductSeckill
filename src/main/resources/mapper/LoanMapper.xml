@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sanxiangbank.seckill.dao.LoanMapper">
+    <select id="selectByIDCardNum" resultType="com.sanxiangbank.seckill.entity.Loan" parameterType="java.lang.String">
+        select *
+        from loan
+        where IDCardNum = #{id};
+    </select>
+    <select id="select" resultType="com.sanxiangbank.seckill.entity.Loan">
+        select *
+        from loan;
+    </select>
+
+</mapper>

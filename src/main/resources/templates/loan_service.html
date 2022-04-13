@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Payloan - Banking & Business Loan HTML5 Responsive Template</title>
+    <title>申请贷款</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Include All CSS -->
@@ -45,20 +45,36 @@
                             <a href="/index">主页</a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">服务</a>
+                            <a href="#">存款/贷款</a>
                             <ul class="sub-menu">
                                 <li><a href="/deposit">存款活动</a></li>
                                 <li><a href="/loan">贷款服务</a></li>
                             </ul>
                         </li>
+                        <li><a href="/blog">服务大厅</a></li>
                         <li><a href="/contact">联系我们</a></li>
+                        <li><a href="/about">关于我们</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-2 col-md-2 hidden-xs">
-                <div class="navigator_btn btn_bg text-right">
-                    <a id="login_stauts" class="common_btn" href="#" test-active="test-form">登录</a>
-                </div>
+            <div class="col-lg-2 col-md-2 hidden-xs" id="login_stauts1" style="display: None">
+                <nav class="mainmenu MenuInRight text-right">
+                    <a class="common_btn" href="#" test-active="test-form">登录</a>
+                </nav>
+            </div>
+            <div class="col-lg-2 col-md-2 hidden-xs" id="login_stauts2" style="display: None">
+                <nav class="mainmenu MenuInRight text-right">
+                    <ul>
+                        <li class="menu-item-has-children">
+                            <a href="#" id="userName"><img src="images/userIcon.svg"> 小王</a>
+                            <ul class="sub-menu">
+                                <li><a href="/myinfo">个人信息</a></li>
+                                <li><a href="/myorder">我的订单</a></li>
+                                <li><a href="/logout">退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
@@ -71,8 +87,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="bannerTitle text-left">
-                        <h2>Loan Calcualtion</h2>
-                        <p>We are here to help you when you need your<br>financial support, then we are help you.</p>
+                        <h2>优质贷款申请</h2>
+                        <p>为您的事业助一臂之力</p>
                     </div>
                 </div>
             </div>
@@ -90,21 +106,21 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-6">
                                 <div class="totalAmout">
-                                    <h4>Total Amount</h4>
-                                    <h2>$68,960</h2>
+                                    <h4>金额</h4>
+                                    <h2>100000</h2>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-6">
                                 <div class="instalAmout text-center">
                                     <div class="singleAmount">
-                                        <h4>Installment</h4>
-                                        <h3>$6985</h3>
+                                        <h4>手续费</h4>
+                                        <h3>0</h3>
                                     </div>
                                     <div class="singleAmount">
-                                        <h4>Interest Rate</h4>
-                                        <h3>$6985</h3>
+                                        <h4>利息</h4>
+                                        <h3>13400</h3>
                                     </div>
-                                    <a href="#" class="common_btn">Apply Now</a>
+                                    <a href="#" class="common_btn">申请</a>
                                 </div>
                             </div>
                         </div>
@@ -116,6 +132,19 @@
     <!-- Common Section -->
 
 </body>
+<!-- Include All JS -->
+<script src="js/jquery.js"></script>
+<script src="js/cookie.umd.min.js"></script>
+<script src="layui/layui.js"></script>
+<script src="js/common.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.themepunch.revolution.min.js"></script>
+<script src="js/jquery.themepunch.tools.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/shuffle.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/theme.js"></script>
 
 
 </html>
