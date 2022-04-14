@@ -110,7 +110,6 @@ CREATE TABLE `loan`
     `endTime`    date               NOT NULL COMMENT '到期时间',
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-# 近 3 年逾期 2 次以上（金额小于 1000 元，3 天内还清的除外）
 
 insert into loan values(null,'1',2000,null,'2022-04-01','2022-04-10');
 insert into loan values(null,'1',2000,'2022-04-11','2022-04-01','2022-04-10');
@@ -128,7 +127,7 @@ insert into loan values(null,'3',500,'2022-04-11','2022-04-01','2022-04-10');
 insert into loan values(null,'3',500,'2022-04-14','2022-04-01','2022-04-10');
 select datediff(now(), '2022-04-10');
 select * from loan;
-
+# 近 3 年逾期 2 次以上（金额小于 1000 元，3 天内还清的除外）
 select count(*)>2
 from loan
 where IDCardNum = '3'
@@ -139,5 +138,5 @@ where IDCardNum = '3'
         or
         (returnTime is null and datediff(now(), returnTime) <= 3)
     )
-    );
+);
 

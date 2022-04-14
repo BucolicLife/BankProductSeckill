@@ -1,5 +1,9 @@
 package com.sanxiangbank.seckill.service;
 
+import com.sanxiangbank.seckill.entity.StockOrder;
+
+import java.util.List;
+
 public interface OrderService {
 
     /**
@@ -55,6 +59,5 @@ public interface OrderService {
      */
     public Boolean checkUserOrderInfoInCache(Integer sid, Integer userId) throws Exception;
 
-
-
+    public List<StockOrder> selectByUserID(Integer UserId);
 }

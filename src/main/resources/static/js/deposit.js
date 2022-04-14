@@ -90,7 +90,7 @@ template = '<div  class="col-lg-6 col-md-6">\n' +
     '                        本活动将于{beginTime}于本页面开启，敬请期待。\n' +
     '                    </p>\n' +
     '                    <div class="layui-btn-container">\n' +
-    '                        <button type="button" style="background:#8180e0;text-align: center" class="{buttonClass}" onclick="buy({id})" {dis}>{buttonName}\n' +
+    '                        <button  type="button" style="background:#8180e0;text-align: center" class="{buttonClass}" onclick="buy({id})" {dis}>{buttonName}\n' +
     '                        </button>\n' +
     '                    </div>\n' +
     '\n' +
@@ -101,17 +101,45 @@ showActivity();
 
 
 function buy(id) {
+    curUserStr = cookie("curUser");
+    curUser = curUserStr == null || curUserStr == '' ? null : JSON.parse(curUserStr);
+    if (curUser == null) {
+        return;
+    }
     $.ajax({
-        type: "POST",
-        url: "/stock/totalAlive",
-        data: null,
+        type: "GET",
+        url: "/order/createUserOrderWithMq",
+        data: {userId: curUser.id, sid: id},
         dataType: 'JSON',
         success: function (rdata) {
-
+            console.log(rdata);
+            layer.open({
+                type: 1
+                , offset: "auto" //具体配置参考：https://www.layuiweb.com/doc/modules/layer.html#offset
+                , id: 'layerDemo' + "auto" //防止重复弹出
+                , content: '<div style="padding: 20px 100px;">' + rdata.data + '</div>'
+                , btn: '确认'
+                , btnAlign: 'c' //按钮居中
+                , shade: 0 //不显示遮罩
+                , yes: function () {
+                    layer.closeAll();
+                }
+            });
         },
         error: function (rdata) {
             console.log(rdata);
-            return rdata;
+            layer.open({
+                type: 1
+                , offset: "auto" //具体配置参考：https://www.layuiweb.com/doc/modules/layer.html#offset
+                , id: 'layerDemo' + "auto" //防止重复弹出
+                , content: '<div style="padding: 20px 100px;">' + rdata.data + '</div>'
+                , btn: '确认'
+                , btnAlign: 'c' //按钮居中
+                , shade: 0 //不显示遮罩
+                , yes: function () {
+                    layer.closeAll();
+                }
+            });
         },
     });
 }

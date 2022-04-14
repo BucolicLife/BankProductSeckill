@@ -13,7 +13,7 @@ public interface UserService {
 
     public boolean signIn(String tel, String password);
 
-    public boolean signUp(User user);
+    public boolean signUp(User user) throws Exception;
 
     public User getUser(String tel);
 

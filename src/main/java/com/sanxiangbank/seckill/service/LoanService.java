@@ -8,4 +8,8 @@ public interface LoanService {
     public List<LoanAccessRule> select();
 
     public List<LoanAccessRule> selectByIDCardNum(String id);
+
+    public Boolean isQualified(String uid);
+
+    public boolean apply(String uid);
 }

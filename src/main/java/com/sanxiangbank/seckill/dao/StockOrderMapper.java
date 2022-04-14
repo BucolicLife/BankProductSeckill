@@ -3,6 +3,8 @@ package com.sanxiangbank.seckill.dao;
 import com.sanxiangbank.seckill.entity.StockOrder;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface StockOrderMapper {
 
@@ -13,6 +15,8 @@ public interface StockOrderMapper {
     int insertSelective(StockOrder record);
 
     StockOrder selectByPrimaryKey(Integer id);
+
+    List<StockOrder> selectByUserID(Integer UserId);
 
     int updateByPrimaryKeySelective(StockOrder record);
 

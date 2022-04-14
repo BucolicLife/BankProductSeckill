@@ -58,7 +58,7 @@ public enum ReturnCode {
      **/
     private final String message;
 
-    ReturnCode(int code, String message) {
+     ReturnCode(int code, String message) {
         this.code = code;
         this.message = message;
     }

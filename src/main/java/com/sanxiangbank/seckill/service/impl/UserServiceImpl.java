@@ -6,6 +6,8 @@ import com.sanxiangbank.seckill.entity.Stock;
 import com.sanxiangbank.seckill.entity.User;
 import com.sanxiangbank.seckill.service.StockService;
 import com.sanxiangbank.seckill.service.UserService;
+import com.sanxiangbank.seckill.util.Common;
+import com.sanxiangbank.seckill.util.Sm3Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +41,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean signUp(User user) {
+    public boolean signUp(User user) throws Exception {
+        if (exist(user.getTel())) {
+            return false;
+        }
+        user.setPassword(Sm3Util.sm3bcHex((user.getPassword() + Common.PASSWORD_SALT).getBytes()));
         userMapper.addUser(user);
         return true;
     }

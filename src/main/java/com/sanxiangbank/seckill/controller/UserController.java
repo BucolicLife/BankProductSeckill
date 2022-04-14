@@ -40,15 +40,12 @@ public class UserController {
     }
 
     @PostMapping("/user/signup")
-    public ResultData registry(User user) {
+    public ResultData registry(User user) throws Exception {
         log.info("注册新用户{}", user);
-        if (userService.exist(user.getTel())) {
-            return ResultData.fail(ReturnCode.USER_EXISTED);
-        }
         if (userService.signUp(user)) {
             return ResultData.success(user);
         } else {
-            return ResultData.fail(ReturnCode.RC999);
+            return ResultData.fail(ReturnCode.USER_EXISTED);
         }
     }
 

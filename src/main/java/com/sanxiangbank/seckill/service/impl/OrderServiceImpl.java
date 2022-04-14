@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -269,4 +271,10 @@ public class OrderServiceImpl implements OrderService {
         LOGGER.info("写入用户订单数据Set：[{}] [{}]", key, userId.toString());
         return stringRedisTemplate.opsForSet().add(key, userId.toString());
     }
+
+    @Override
+    public List<StockOrder> selectByUserID(Integer UserId) {
+        return orderMapper.selectByUserID(UserId);
+    }
+
 }

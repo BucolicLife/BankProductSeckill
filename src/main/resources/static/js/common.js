@@ -1,8 +1,8 @@
 function init() {
     curUserStr = cookie("curUser");
-    curUser = curUserStr == null ? null : JSON.parse(curUserStr);
+    curUser = curUserStr == null || curUserStr == '' ? null : JSON.parse(curUserStr);
     if (curUser != null) {
-        showUser();
+        showUser(curUser);
     } else {
         showLogin();
     }
@@ -35,7 +35,7 @@ function showLogin() {
     document.getElementById("login_stauts1").style.display = "block";
 }
 
-function showUser() {
+function showUser(curUser) {
     if (document.getElementById("login_stauts2") == null || document.getElementById("login_stauts1") == null) {
         return;
     }
@@ -49,9 +49,11 @@ function login_success(user) {
     cookie.set("curUser", JSON.stringify(user));
     location.href = "/";
 }
-function gotoRegistry(){
+
+function gotoRegistry() {
     location.href = "/registry";
 }
+
 layui.use(function () {
     var layer = layui.layer
         , form = layui.form
@@ -96,12 +98,18 @@ layui.use(function () {
                             data: data.field,
                             dataType: 'JSON',
                             success: function (rdata) {
-                                console.log(rdata);
+                                if (rdata == null || rdata == '' || rdata.status == 999) {
+                                    layer.msg(JSON.stringify("密码或账号不正确"), {icon: 0});
+                                }
+                                console.log("ok");
+                                console.log(rdata)
+                                console.log(rdata.status)
                                 layer.msg(JSON.stringify("登录成功"), {icon: 1});
                                 layer.close(index); //关闭层
-                                login_success(rdata);
+                                login_success(rdata.data);
                             },
                             error: function (rdata) {
+                                console.log("no ok");
                                 console.log(rdata);
                                 layer.msg(JSON.stringify("登录失败"), {icon: 0});
                             },

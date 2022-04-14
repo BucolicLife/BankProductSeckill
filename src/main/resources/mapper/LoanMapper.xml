@@ -10,5 +10,19 @@
         select *
         from loan;
     </select>
+    <select id="isQualified" resultType="java.lang.Integer">
+        select count(*)
+        from loan
+        where IDCardNum = #{uid}
+          and beginTime > date_sub(now(), interval #{rule.yearLimit} year)
+          and ((returnTime is not null and returnTime > endTime) or (returnTime is null and now() > endTime))
+          and not (amount <![CDATA[ < ]]> #{rule.excludeAmount} and (
+                (returnTime is not null and datediff(returnTime, endTime)<![CDATA[ <= ]]>  #{rule.excludeTimes})
+                or
+                (returnTime is null and datediff(now(), returnTime)<![CDATA[ <= ]]> #{rule.excludeTimes})
+            )
+            );
+    </select>
+
 
 </mapper>
